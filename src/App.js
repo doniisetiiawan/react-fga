@@ -1,24 +1,22 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import logo from './logo.svg';
+import Header from './components/layout/Header';
+import Content from './components/layout/Content';
+import Footer from './components/layout/Footer';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header title="Dev Education" />
+
+      <Content>
+        <p>This is our <strong>Content</strong> component</p>
+      </Content>
+
+      <Footer
+        copyright={`Dev.education ${new Date().getFullYear()}`}
+      />
     </div>
   );
 }
