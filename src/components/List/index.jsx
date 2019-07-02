@@ -1,21 +1,18 @@
-import PropTypes from 'prop-types';
 import React from 'react';
-import withData from './WithData';
+import { connect } from 'react-refetch';
 
-const List = ({ data: gists }) => (
-  <ul>
-    {gists.map(gist => (
-      <li key={gist.id}>{gist.description}</li>
-    ))}
-  </ul>
+const List = ({ gists }) => (
+  gists.fulfilled && (
+    <ul>
+      {gists.value.map(gist => (
+        <li key={gist.id}>{gist.description}</li>
+      ))}
+    </ul>
+  )
 );
 
-const withGists = withData(
-  props => `https://api.github.com/users/${props.username}/gists`,
-);
+const connectWithGists = connect(({ username }) => ({
+  gists: `https://api.github.com/users/${username}/gists`,
+}));
 
-export default withGists(List);
-
-List.propTypes = {
-  data: PropTypes.array,
-};
+export default connectWithGists(List);
