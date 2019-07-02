@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-refetch';
+import Gist from './Gist';
 
 const List = ({ gists }) => (
   gists.fulfilled && (
     <ul>
       {gists.value.map(gist => (
-        <li key={gist.id}>{gist.description}</li>
+        <Gist key={gist.id} {...gist} />
       ))}
     </ul>
   )
