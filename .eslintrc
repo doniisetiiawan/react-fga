@@ -6,6 +6,7 @@
     "no-undef": "off",
     "no-console": "off",
     "react/button-has-type": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/forbid-prop-types": "off"
   }
 }

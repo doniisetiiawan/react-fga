@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import Counter from './components/Counter';
+import List from './components/List';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Counter />
+      <List username="gaearon" />
     </div>
   );
 }
