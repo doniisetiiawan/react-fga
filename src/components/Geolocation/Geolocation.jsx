@@ -1,41 +1,18 @@
-import React, { Component } from 'react';
+/* eslint-disable react/require-default-props */
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class Geolocation extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      latitude: null,
-      longitude: null,
-    };
-
-    this.handleSuccess = this.handleSuccess.bind(this);
-  }
-
-  componentDidMount() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.handleSuccess);
-    }
-  }
-
-  handleSuccess({ coords: { latitude, longitude } }) {
-    this.setState({
-      latitude,
-      longitude,
-    });
-  }
-
-  render() {
-    const { longitude, latitude } = this.state;
-
-    return (
-      <div>
-        <h1>Geolocation:</h1>
-        <div>Latitude: {latitude}</div>
-        <div>Longitude: {longitude}</div>
-      </div>
-    );
-  }
-}
+const Geolocation = ({ latitude, longitude }) => (
+  <div>
+    <h1>Geolocation:</h1>
+    <div>Latitude: {latitude}</div>
+    <div>Longitude: {longitude}</div>
+  </div>
+);
 
 export default Geolocation;
+
+Geolocation.propTypes = {
+  latitude: PropTypes.number,
+  longitude: PropTypes.number,
+};
