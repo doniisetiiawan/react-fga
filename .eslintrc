@@ -4,6 +4,8 @@
   "rules": {
     "react/jsx-one-expression-per-line": "off",
     "no-undef": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "react/button-has-type": "off",
+    "react/require-default-props": "off"
   }
 }

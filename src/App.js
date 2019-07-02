@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import MyComponent from './components/MyComponent';
+import Counter from './components/Counter';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <MyComponent />
+      <Counter />
     </div>
   );
 }
