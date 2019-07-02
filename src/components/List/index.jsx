@@ -1,19 +1,19 @@
 import React from 'react';
-import { connect } from 'react-refetch';
-import Gist from './Gist';
+import { ListProvider, ListContext } from './ListContext';
 
-const List = ({ gists }) => (
-  gists.fulfilled && (
-    <ul>
-      {gists.value.map(gist => (
-        <Gist key={gist.id} {...gist} />
-      ))}
-    </ul>
-  )
+const List = () => (
+  <ListProvider>
+    <ListContext.Consumer>
+      {({ gists, myLogAction }) => (
+        <ul>
+          {myLogAction()}
+          {gists.map(gist => (
+            <li key={gist.id}>{gist.description}</li>
+          ))}
+        </ul>
+      )}
+    </ListContext.Consumer>
+  </ListProvider>
 );
 
-const connectWithGists = connect(({ username }) => ({
-  gists: `https://api.github.com/users/${username}/gists`,
-}));
-
-export default connectWithGists(List);
+export default List;
