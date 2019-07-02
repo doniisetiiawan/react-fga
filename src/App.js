@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import Geolocation from './components/Geolocation';
+import MyComponent from './components/MyComponent';
 import './App.css';
 
 function App() {
   return (
-    <>
-      <Geolocation />
-    </>
+    <div className="App">
+      <MyComponent />
+    </div>
   );
 }
 
