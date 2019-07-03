@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import JSONSchemaForm from './components/JSONSchemaForm';
+import Button from './components/Button';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <JSONSchemaForm />
+      <Button />
     </div>
   );
 }
