@@ -1,13 +1,16 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import FontSize from './components/FontSize';
+import { StyleRoot } from 'radium';
+import Button from './components/Button';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <FontSize />
-    </div>
+    <StyleRoot>
+      <div className="App">
+        <Button />
+      </div>
+    </StyleRoot>
   );
 }
 
