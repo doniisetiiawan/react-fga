@@ -5,6 +5,7 @@
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.8.6",
     "react-jsonschema-form": "^1.6.1",
     "react-refetch": "^2.0.3",
