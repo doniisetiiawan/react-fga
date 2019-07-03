@@ -8,6 +8,7 @@
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.8.6",
     "react-jsonschema-form": "^1.6.1",
+    "react-motion": "^0.5.2",
     "react-refetch": "^2.0.3",
     "react-scripts": "3.0.1"
   },
