@@ -28,10 +28,9 @@ class List extends Component {
       <div>
         <ul>
           {items.map(item => (
-            <Item key={item} item={item} />
+            <Item key={item} item={item} onClick={console.log} />
           ))}
         </ul>
-
         <button onClick={this.handleClick}>+</button>
       </div>
     );
