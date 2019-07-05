@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import List from './components/List';
+import Todos from './components/Todos';
 import './App.css';
 
 if (process.env.NODE_ENV !== 'production') {
@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
 function App() {
   return (
     <div className="App">
-      <List />
+      <Todos />
     </div>
   );
 }
