@@ -1,18 +1,20 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 
-function Item(props) {
-  const { item } = props;
+class Item extends PureComponent {
+  static propTypes = {
+    item: PropTypes.string,
+  };
 
-  return (
-    <div>
-      <li>{item}</li>
-    </div>
-  );
+  render() {
+    const { item } = this.props;
+
+    return (
+      <div>
+        <li>{item}</li>
+      </div>
+    );
+  }
 }
-
-Item.propTypes = {
-  item: PropTypes.string,
-};
 
 export default Item;
