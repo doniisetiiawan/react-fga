@@ -1,19 +1,43 @@
-import React from 'react';
-import { ListProvider, ListContext } from './ListContext';
+import React, { Component } from 'react';
 
-const List = () => (
-  <ListProvider>
-    <ListContext.Consumer>
-      {({ gists, myLogAction }) => (
+class List extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      items: ['foo', 'bar'],
+    };
+  }
+
+  shouldComponentUpdate = (nextProps, nextState) => {
+    const { items } = this.state;
+    return items !== nextState.items;
+  };
+
+  handleClick = () => {
+    const { items: items1 } = this.state;
+
+    const items = items1.slice();
+    items.unshift('baz');
+
+    this.setState({
+      items,
+    });
+  };
+
+  render() {
+    const { items } = this.state;
+
+    return (
+      <div>
         <ul>
-          {myLogAction()}
-          {gists.map(gist => (
-            <li key={gist.id}>{gist.description}</li>
-          ))}
+          {items.map(item => <li key={item}>{item}</li>)}
         </ul>
-      )}
-    </ListContext.Consumer>
-  </ListProvider>
-);
+
+        <button onClick={this.handleClick}>+</button>
+      </div>
+    );
+  }
+}
 
 export default List;
