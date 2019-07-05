@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Item from './Item';
 
 class List extends Component {
   constructor(props) {
@@ -8,11 +9,6 @@ class List extends Component {
       items: ['foo', 'bar'],
     };
   }
-
-  shouldComponentUpdate = (nextProps, nextState) => {
-    const { items } = this.state;
-    return items !== nextState.items;
-  };
 
   handleClick = () => {
     const { items: items1 } = this.state;
@@ -31,7 +27,9 @@ class List extends Component {
     return (
       <div>
         <ul>
-          {items.map(item => <li key={item}>{item}</li>)}
+          {items.map(item => (
+            <Item key={item} item={item} />
+          ))}
         </ul>
 
         <button onClick={this.handleClick}>+</button>
