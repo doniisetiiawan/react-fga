@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Item from './Item';
 
+const statuses = ['open', 'close'];
+
 class List extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +30,12 @@ class List extends Component {
       <div>
         <ul>
           {items.map(item => (
-            <Item key={item} item={item} onClick={console.log} />
+            <Item
+              key={item}
+              item={item}
+              onClick={console.log}
+              statuses={statuses}
+            />
           ))}
         </ul>
         <button onClick={this.handleClick}>+</button>
