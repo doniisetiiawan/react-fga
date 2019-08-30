@@ -1,0 +1,15 @@
+version: 2
+  jobs:
+    build:
+      branches:
+        only:
+          - master
+      working_directory: ~/tmp
+      docker:
+        - image: circleci/node:10
+      steps:
+        - checkout
+        - run: npm install
+        - run: npm run lint
+        - run: npm test
+        - run: ssh -o StrictHostKeyChecking=no $DROPLET_USER@$DROPLET_IP 'cd production; git checkout master; git pull; npm install; npm run start:production;'
